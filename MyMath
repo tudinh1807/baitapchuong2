@@ -1,5 +1,5 @@
 
-/*Bài tập 2/47 sách Java
+/*Bài tập 2/47 sách Javas
   Viết chuong trình tạo và sử dụng lớp MyMath biểu diễn lớp toán học gồm các phương thức static :
   a. Tìm ước số chung lớn nhất của ba số nguyên : comDiv(int,int)
   b. Tìm giá trị lớn nhất của ba số thực : max(float,float,float)
