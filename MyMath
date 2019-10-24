@@ -1,0 +1,87 @@
+
+/*Bài tập 2/47 sách Java
+  Viết chuong trình tạo và sử dụng lớp MyMath biểu diễn lớp toán học gồm các phương thức static :
+  a. Tìm ước số chung lớn nhất của ba số nguyên : comDiv(int,int)
+  b. Tìm giá trị lớn nhất của ba số thực : max(float,float,float)
+  c. Tìm giá trị nhỏ nhất của ba số thực : min(float,float,float)
+  d. Kiểm tra số nguyên tố : isPrimeNumber(int)
+  e. Tính tổng dãy số từ 1 đến N : sumRange(int)
+  f. Hàm tính trị tuyệt đối của một số nguyên : abs(int)
+  g. Hàm làm tròn một số thực : round(float)*/
+  
+  
+import java.util.Scanner;
+
+public class MyMath {
+
+	public static int comDiv(int a,int b) {
+		return (b==0)?a:comDiv(b,a%b);
+	}
+	public static void max(float a,float b,float c) {
+		float max=a;
+		if(max<b) max=b;
+		if(max<c) max=c;
+		System.out.print("So lon nhat la : "+max+"\n");
+	}
+	public static void min(float a,float b,float c) {
+		float min=a;
+		if(min>b) min=b;
+		if(min>c) min=c;
+		System.out.print("So nho nhat la : "+min+"\n");
+	}
+	public static boolean isPrimeNumber(int a) {
+		for(int i=2;i<=Math.round(Math.sqrt(a));i++) {
+			if(a%i==0) break;
+		if (i<=Math.round(Math.sqrt(a)))
+			return true;
+		}
+		return false;
+	}
+	public static void sumRange(int a) {
+		int s=0;
+		for(int i=0;i<=a;i++) {
+			s=s+i;
+		}
+		System.out.print(s);
+	}
+	public static void absValue(int a) {
+		if(a<0) {
+			a=-a;
+			System.out.print("Tri tuyet doi la : "+a+"\n");
+		}
+		else 	System.out.print("Tri tuyet doi la : "+a+"\n");
+	}
+	public static float round(float a) {
+		return Math.round(a);
+	}
+	public static void main(String[] args) {
+		float a,b,c;
+		int a1,b1;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("CAC PHEP TOAN CUA SO NGUYEN : ");
+		System.out.print("Nhap so nguyen thu nhat : ");
+		a1 = sc.nextInt();
+		System.out.print("Nhap so nguyen thu hai : ");
+		b1 = sc.nextInt();
+		System.out.print("Uoc chung lon nhat cua hai so nguyen la : "+comDiv(a1,b1)+"\n");
+		if(isPrimeNumber(a1)==true) System.out.print(a1+" la so nguyen to\n");
+		else System.out.print(a1+" khong phai la so nguyen to\n");
+		if(isPrimeNumber(b1)==true) System.out.print(b1+" la so nguyen to\n");
+		else System.out.print(b1+" khong phai la so nguyen to\n");
+    absValue(a1);
+    absValue(b1);
+		System.out.println("CAC PHEP TOAN CUA SO THUC : ");
+		System.out.print("Nhap so thuc thu nhat : ");
+		a = sc.nextFloat();
+		System.out.print("Nhap so thuc thu hai : ");
+		b = sc.nextFloat();
+		System.out.print("Nhap so thuc thu ba : ");
+		c = sc.nextFloat();
+		max(a,b,c);
+		min(a,b,c);
+		System.out.print("So thu nhat duoc lam tron thanh : "+round(a)+"\n");
+		System.out.print("So thu hai duoc lam tron thanh : "+round(b)+"\n");
+		System.out.print("So thu ba duoc lam tron thanh : "+round(c)+"\n");
+	}
+
+}
