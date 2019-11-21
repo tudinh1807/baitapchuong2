@@ -116,10 +116,6 @@ public class update extends JFrame implements ActionListener {
 			this.name=name;
 		}
 		
-	public void update_Load(Object sender,Event e) {
-		id=utid.getText();
-		name=utname.getText();
-	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Lưu")) {
